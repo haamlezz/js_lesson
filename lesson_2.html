@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name" onkeyup="showName()">
+    <h1 id="result"></h1>
+</body>
+</html>
+<script>
+    function showName()
+    {
+        var name = document.getElementById("name").value;
+        document.getElementById("result").innerHTML = name;
+    }
+</script>
+

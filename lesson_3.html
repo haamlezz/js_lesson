@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <input type="text" id="num" placeholder="enter number 0-10">
+    <button onclick="guess()">Click me!</button>
+    <h1 id="result"></h1>
+</body>
+</html>
+<script>
+    function guess()
+    {
+        var num = document.getElementById("num").value;
+        var ranNum = Math.floor(Math.random() * 11);
+        var result;
+        if(num == ranNum)
+        {
+            result = "You won!";
+        } else {
+            result = "You lost! <br> Loterry is " + ranNum;
+        }
+
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
