@@ -4,14 +4,21 @@
 
 </head>
 <body>
+    <!-- ຟອມປ້ອນຊື່ ເມື່ອມີການພິມຈະເອີ້ນໃຊ້ງານ showName() -->
     <input type="text" id="name" placeholder="Enter your name" onkeyup="showName()">
+   
+    <!-- ບ່ອນສະແດງຜົນ -->
     <h1 id="result"></h1>
 </body>
 </html>
 <script>
+    //ປະກາດຟັງຊັ້ນ showName()
     function showName()
     {
+        //ປະກາດໂຕປ່ຽນ name ແລ້ວເອີ້ນເອົາຄ່າຈາກຟອມດ້ານເທິງ
         var name = document.getElementById("name").value;
+
+        //ນຳເອົາ name ມາສະແດງທີ່ retsult
         document.getElementById("result").innerHTML = name;
     }
 </script>

@@ -4,15 +4,24 @@
 
 </head>
 <body>
+    <!-- ຟອມປ້ອນຊື່ -->
     <input type="text" id="name" placeholder="Enter your name">
+
+    <!-- ປຸ່ມກົດ ທີ່ເອີ້ນໃຊ້ງານຟັງຊັ້ນ showName() ເມື່ອເກີດການ ຄຼິກ-->
     <button onclick="showName()">Click me!</button>
+
+    <!-- ບ່ອນສະແດງຜົນ -->
     <h1 id="result"></h1>
 </body>
 </html>
 <script>
+    //ປະກາດຟັງຊັ້ນ showName()
     function showName()
     {
+        //ປະກາດໂຕປ່ຽນ name ແລ້ວເອີ້ນເອົາຄ່າຈາກຟອມດ້ານເທິງ
         var name = document.getElementById("name").value;
+
+        //ນຳເອົາ name ມາສະແດງທີ່ retsult
         document.getElementById("result").innerHTML = name;
     }
 </script>

@@ -4,24 +4,42 @@
 
 </head>
 <body>
+    <!--ຊ່ອງປ້ອນໂຕເລກແຕ່ 0-1 -->
     <input type="text" id="num" placeholder="enter number 0-10">
+
+    <!--ປຸ່ມກົດຈະເອີ້ນໃຊ້ງານຟັງຊັ້ນ guess() -->
     <button onclick="guess()">Click me!</button>
+
+    <!--ບ່ອນສະແດງຜົນ-->
     <h1 id="result"></h1>
 </body>
 </html>
 <script>
+    //ປະກາດຟັງຊັ້ນ guess
     function guess()
     {
+        //ປະກາດໂຕປ່ຽນ num ຮັບຄ່າຈາກ ຊ່ອງປ້ອນໂຕເລກ
         var num = document.getElementById("num").value;
+
+        //ປະກາດໂຕປ່ຽນ ranNum ເພື່ອສຸ່ມໂຕເລກໂດຍໃຊ້ຟັງຊັ້ນ Math.random
         var ranNum = Math.floor(Math.random() * 11);
+        // Math.floor ແມ່ນເອີ້ນໃຊ້ງານຄຳສັ່ງກ່ຽວກັບຄະນິດສາດ
+        // * 11 ແມ່ນກຳນົດໃຫ້ຊຸ່ມແຕ່ເລກ 0-10 (11 ໂຕເລກ)
+
+        //ປະກາດໂຕປ່ຽນ result ບໍ່ມີຄ່າເລີ່ມຕົ້ນ
         var result;
+
+        //ກຳນົດເງື່ອນໄຂ ຖ້າວ່າເລກທີ່ປ້ອນ(num) ເທົ່າກັນກັບ ເລກທີ່ສຸ່ມ(ranNum)
         if(num == ranNum)
         {
+            //ຖ້າຖືກຕ້ອງ ຈະສະແດງ You won ເກັບໄວ້ໃນໂຕປ່ຽນ result
             result = "You won!";
         } else {
+            //ຖ້າຜິດ ຈະສະແດງ You lost ພ້ອມກັບບອກເລກທີ່ອອກ ເກັບໄວ້ໃນໂຕປ່ຽນ result
             result = "You lost! <br> Loterry is " + ranNum;
         }
 
+        //ນຳໂຕປ່ຽນ result ມາສະແດງທີ່ id result
         document.getElementById("result").innerHTML = result;
     }
 </script>
