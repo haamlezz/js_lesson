@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ຄຳສັ່ງ setInterval ໃຊ້ເພື່ອວົນຊໍ້າໄປເລືອກໆຕາມທີ່ໄລຍະທີ່ກຳນົດ</h1>
+ 
+    <h3>ຕົວຢ່າງ 1</h3>
+    <div id="result_1"></div> <!-- ບ່ອນສະແດງຜົນການນັບ -->
+    <hr>
+
+</body>
+</html>
+<script>
+/*
+ຕົວຢ່າງ 1:
+ເປັນການຕັ້ງຄ່າໃຫ້ນັບຈາກໜຶ່ງ ຂຶ້ນໄປເທື່ອລະໜຶ່ງ ໃນທຸກໆ 1 ວິນາທີ
+*/
+    var i = 1;
+    //ປະກາດໂຕປ່ຽນ i = 1
+
+    //ເລີ່ມກຳນົດການນັບດ້ວຍຟັງຊັ້ນ setInterval
+    setInterval(function(){
+        
+        document.getElementById("result_1").innerHTML = i++;
+        //ໃນແຕ່ລະ 1 ວິນາທີໃຫ້ສະແດງຄ່າ i ແລ້ວບວກເພີ່ມອີກ 1
+   
+    },1000);
+    //ໂຕເລກ 1000 ໃນນີ້ໝາຍເຖິງ 1000ມິລີວິນາທີ ຫຼື 1 ວິນາທີ
+
+</script>

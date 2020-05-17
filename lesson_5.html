@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ຄຳສັ່ງ clearInterval ໃຊ້ເພື່ອຢຸດການເຮັດວຽກຂອງ setInterval</h1>
+
+    <h3>ຕົວຢ່າງ 2</h3>
+    <div id="result_2"></div> <!-- ບ່ອນສະແດງຜົນການນັບ -->
+    <button onclick="clearInterval(myVar)">Stop</button> <!-- ປຸ່ມກົດເພື່ອຢຸດການນັບຂອງຕົວຢ່າງສອງ -->
+    <!--
+        clearInterval (myVar) ໝາຍເຖິງ ຢຸດການນັບຂອງໂຕປ່ຽນ myVar ໃນຕົວຢ່າງສອງຂອງຄຳສັ່ງ javascript
+    -->
+    <hr>
+
+</body>
+</html>
+<script>
+
+/*
+ຕົວຢ່າງ 2:
+ເປັນການຕັ້ງຄ່າໃຫ້ນັບຈາກ 1 ຂຶ້ນໄປເທື່ອຄ້າຍຄືກັບຕົວຢ່າງ 1
+ແຕ່ເວລາກົດປ່ມ Stop ແມ່ນຈະຢຸດນັບ
+ໃນປຸ່ມຈະມີຟັງຊັ້ນ clearInterval() 
+*/
+    var j = 1; //ປະກາດໂຕປ່ຽນ j = 1 ເປັນຄ່າເລີ່ມຕົ້ນ
+
+    //ປະກາດໂຕປ່ຽນ myVar ເພື່ອເກັບຄ່າຂອງການນັບ
+    var myVar = setInterval(function(){
+    
+        //ສະແດງຜົນຂອງການນັບໃນໄອດີ result_2
+        document.getElementById("result_2").innerHTML = j++;
+    
+    }, 1000)
+
+</script>
