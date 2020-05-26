@@ -1,0 +1,65 @@
+<!--
+    ໃນບົດນີ້ນັກສຶກສາຈະໄດ້ຮຽນກ່ຽວກັບການໃຊ້ງານ onclick event
+    ແລະ ການຄວບຄຸມ ສະຖານະ ຂອງ element ໃນໜ້າເວັບ
+
+    ຕົວຢ່າງນີ້ຈະເປັນການໃຊ້ເມົ້າກົດທີ່ element ແລ້ວມີການປ່ຽນຄ່າຈາກ
+    x ເປັນ o ແລ້ວຖ້າກົດອີກຄັ້ງໜຶ່ງຈະປ່ຽນຄ່າຈາກ o ກາຍເປັນ x
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Lesson</title>
+    
+    <!-- ກຳນົດ style ເພື່ອຄວາມສວຍງາມ-->
+    <style>
+        .block{
+            border:thin solid #000000;
+            width:100px;
+            height:100px;
+            color:#ff0000;
+            text-align: center;
+            font-size: 90px;
+            padding:0;
+            font-family: Arial;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>ກົດທີ່ຫ້ອງດ້ານລຸ່ມເພື່ອປ່ຽນຄ່າ x ຫຼື o</h2>
+
+    <!-- 
+        ໄອດີ block ຈະເປັນໂຕເກັບ ແລະ ສະແດງຄ່າ x ຫຼື o ໂດຍຈະເຮັດວຽກເມື່ອຖືກຄຼິກ
+        ເຊິ່ງຈະໄປເຮັດວຽກຄຳສັ່ງໃນຟັງຊັ້ນ change()
+    -->
+    <div class="block" id="block" onclick="change()">X</div>
+</body>
+</html>
+<script>
+    
+    // ປະກາດຟັງຊັ້ນ change()
+    //ເມື່ອກົດແລ້ວຄ່າ x ຈະປ່ຽນເປັນ o
+    //ເມື່ອກົດອີກຄັ້ງຈະປ່ຽນຈາກ o ໄປເປັນ x
+    function change(){
+
+        //ຄ່າທີ່ທີ່ຢູ່ໃນໄອດີ block ແລ້ວເກັບໄວ້ໂຕປ່ຽນ block
+        var block = document.getElementById("block").innerHTML;
+
+        //ກວດວ່າ block ມີຄ່າເທົ່າ X ຫຼື ບໍ່
+        if(block === "X"){
+            //ກໍລະນີເທົ່າ x ແມ່ນໃຫ້ປ່ຽນເປັນຄ່າ o ເພື່ອນຳໄປສະແດງ
+            block = "O";
+        } else {
+
+            //ກໍລະນີທີ່ມີຄ່າເທົ່າ o ແມ່ນໃຫ້ປ່ຽນເປັນຄ່າ x ເພື່ອນຳໄປສະແດງ
+            block = "X";
+        }
+
+        //ສະແດງຄ່າທີ່ໄດ້ຈາກການກວດສອບຂ້າງເທິງ
+        document.getElementById("block").innerHTML = block;
+
+    }
+</script>
