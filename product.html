@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Product List</h1>
+        <div class="row" id="show">
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    //ກຳນົດລາຍການສິນຄ້າ ເປັນ Object Array
+    var products = [
+        {id:1, name:'Waiwai', price:2000, rate:3},
+        {id:2, name:'Mama', price:3000, rate: 5},
+        {id:3, name:'Yumyum', price:4000, rate: 2},
+    ]
+
+    //Loop ລາຍການສິນຄ້າ
+    for(var i=0; i<products.length; i++)
+    {
+        //ສ້າງອິລິເມັ້ນ div
+        var div = document.createElement('div');
+
+        //ກຳນົດຄຼາສໃຫ້ div ເປັນ col-md-4
+        div.setAttribute('class','col-md-4');
+
+        //ປະກາດໂຕປ່ຽນ star ເພື່ອຮັບເອົາຈຳນວນຂອງດາວ ຕາມຄ່າຂອງ rate ທີ່ສົ່ງມາຈາກ array
+        var star = '';
+        //loop ດາວອອກມາໄວ້ໃນໂຕປ່ຽນ star
+        for(var j=1; j<=products[i].rate; j++)
+        {
+            star += '<i data-feather="star"></i>';
+        }
+        
+        //ຮູບແບບການສະແດງຜົນລາຍການສິນຄ້າ
+        div.innerHTML = `
+            <div class="card">
+                <a href="#"><img class="card-img-top img-fluid" src="https://via.placeholder.com/150" alt="Image Product"/></a>
+                <div class="body mt-3 mb-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6"><a href="#"><h4 class="text-primary">`+products[i].name+`</h4></a></div>
+                            <div class="col-6"><h4 class="text-right">`+products[i].price+`</h4></div>
+                        </div>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+                <div class="card-footer text-warning">
+                    `+star+`
+                </div>
+            </div>
+        `;
+
+        //ສະແດງລາຍການສິນຄ້າໃນ show
+        document.getElementById('show').appendChild(div);
+    }
+
+    //ສະແດງດາວໃນແທັກ i 
+    feather.replace()
+</script>

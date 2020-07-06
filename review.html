@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dog">Kookik</p>
+    <p id="bird">Nooknik</p>
+
+    <input type="text" value="Waiwai" name="product[]" id="pro1">
+    <input type="text" value="Mama" name="product[]" id="pro2">
+    <input type="text" value="Yumyum" name="product[]" id="pro3">
+    <hr>
+    <input type="radio" name="gender" id="" value="Male"> Male
+    <input type="radio" name="gender" id="" value="Female"> Female
+    <input type="radio" name="gender" id="" value="Ladyboy"> Ladyboy
+    <input type="radio" name="gender" id="" value="Lesbien"> Lesbien
+    <hr>
+    <div id="kik">
+        
+    </div>
+</body>
+</html>
+<script>
+    //ການຂຽນ JS ຝັງໃນ HTML
+    //Embeded JS
+
+    //ວິທີຮັບຄ່າຈາກ Element
+    var d = document.getElementById('bird').innerHTML;
+    console.log(d);
+
+    var product = document.getElementsByName('product[]');
+    
+    // console.log( product[0].value )
+    // console.log( product[1].value )
+    // console.log( product[2].value )
+
+    for(var i=0; i < product.length; i++){
+        console.log( product[i].value );
+    }
+
+
+    //////////////////////////////////////////
+
+    var g = document.getElementsByName('gender');
+
+    for(var k=0; k < g.length; k++){
+        g[k].onclick = function(){
+            console.log(this.value)
+        }
+    }
+
+    var Jack_Kik = ['Buabai', 'Buabarn', 'Bualai'];
+    for(var j=0; j < Jack_Kik.length; j++)
+    {
+        var p = document.createElement('p');
+        p.innerHTML = Jack_Kik[j];
+        document.getElementById('kik').appendChild(p)
+    }
+
+    
+    
+</script>

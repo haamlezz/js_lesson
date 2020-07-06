@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-red{color:red;}
+        .text-blue{color:blue;}
+        .text-pink{color:pink;}
+    </style>
+</head>
+<body>
+    <select name="" id="color" onchange="changeColor()">
+        <option value="text-red">Red</option>
+        <option value="text-blue">Blue</option>
+        <option value="text-pink">Pink</option>
+    </select>
+
+    <div id="text" class="text-red">
+        <h1>My Website</h1>
+        <p>This is my online shop</p>
+    </div>
+
+    <h1>My Little Pony</h1>
+    <select name="" id="pony" onchange="changePony()"></select>
+    <img id="show" src="image/pinkie.jpg" alt="" width="200">
+   
+</body>
+</html>
+
+<script>
+    function changeColor(){
+        var selected_color = document.getElementById('color').value;
+        
+        document.getElementById('text').setAttribute('class',selected_color);
+    }
+    
+    var mypony = ['pinkie', 'rainbow']
+    for(var i=0; i < mypony.length; i++){
+        var option = document.createElement('option')
+        option.value = mypony[i]
+        option.innerHTML = mypony[i]
+        document.getElementById('pony').appendChild(option)
+    }
+
+    function changePony(){
+        var selected_pony = document.getElementById('pony').value
+        var image = 'image/'+selected_pony+'.jpg'
+        console.log(image)
+        document.getElementById('show').setAttribute('src',image)
+    }
+
+</script>

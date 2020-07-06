@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>setTimeout ໄວ້ກຳນົດຄ່ານັບຖອຍຫຼັງ ແລະ clearTimeout ເພື່ອຢຸດການນັບຖອຍຫຼັງ</h1>
+    <h2>setTimeout ຈະເຮັດວຽກພຽງຄັ້ງດຽງຫຼັງຈາກນັບຖອຍຫຼັງຄົບຕາມຈຳນວນເວລາ</h2>
+    
+    <h3>ຕົວຢ່າງ 3</h3>
+    
+    <!-- ຊ່ອງສຳລັບປ້ອນເວລາເປັນວິນາທີ ກຳນົດໃຫ້ມີໄອດີເປັນ myTime -->
+    <input type="text" name="" id="myTime" placeholder="ປ້ອນໂຕເລກວິນາທີ">
+
+    <!-- ປຸ່ມເລີ່ມນັບຖອຍຫຼັງ ເອີ້ນໃຊ້ຟັງຊັ້ນ startCount() ເມື່ອຖືກກົດ -->
+    <button onclick="startCount()">Start</button>
+
+    <!-- ປຸ່ມຢຸດນັບຖອຍຫຼັງ ເອີ້ນໃຊ້ຟັງຊັ້ນ stopCount() ເມື່ອຖືກກົດ -->
+    <button onclick="stopCount()">Stop</button>
+
+</body>
+</html>
+<script>
+/*
+    ຕົວຢ່າງ 3:
+    ເປັນການປ້ອນຄ່າໃນ textfield ທີ່ມີໄອດີ myTime ແລ້ວນຳເອົາຄ່ານັ້ນມາສະແດງເພື່ອນັບຖອຍຫຼັງ
+    ດ້ວຍຟັງຊັ້ນ setTimeout() ເປັນວິນາທີ.
+    
+    ສົມມຸດວ່າປ້ອນໃສ່ 10 ແມ່ນນັບຖອຍຫຼັງ 10 ວິນາທີ
+
+    ໃນຂະນະທີ່ນັບນັ້ນຈະມີການກວດຫາຄ່າທີ່ນັບ
+    ຖ້າມີຄ່າເທົ່າກັບ 0 
+       - ໃຫ້ຢຸດດ້ວຍຄຳສັ່ງ clearTimeout
+       - ແລະ ສະແດງຂຶ້ນວ່າ ໝົດເວລາ
+*/
+
+
+    //ປະກາດຄ່າເລີ່ມຕົ້ນໃຫ້ເປັນ 0
+    var myTime = 0;
+    
+
+    //ປະກາດໂຕປ່ຽນ t ເພື່ອເກັບຄ່າຂອງ setTimeout()
+    var t;
+    
+
+    //ສ້າງຟັງຊັ້ນຊື່ວ່າ startCount() ເຊິ່ງເລີ່ມນັບເມື່ອກົດປຸ່ມ Start ດ້ານເທິງ
+    function startCount(){
+
+        //ຮັບຄ່າ myTime ຈາກຫ້ອງທີ່ປ້ອນໃສ່
+        myTime = document.getElementById("myTime").value;
+
+        //ລົບ myTime ລົງເທື່ອລະໜຶ່ງ
+        myTime--;
+
+        //ສະແດງຄ່າ myTime ໃສ່ໃນຫ້ອງ textfield
+        document.getElementById("myTime").value = myTime;
+
+        //ກຳນົດການໝົດເວລາໃຫ້ເປັນ 1 ວິນາທີ ແລ້ວຈຶ່ງເຮັດວຽກຟັງຊັ້ນ startCount()
+        t = setTimeout(startCount, 1000);
+
+        //ກວດສອບວ່າ myTime ມີຄ່າເປັນ 0 ຫຼື ບໍ່
+        // ສັນຍາລັກ === ໝາຍເຖິງການປຽບທຽບຄ່າ ແລະ ປຽບທຽບຊະນິດຂໍ້ມູນໄປພ້ອມໆກັນ
+        // ໝາຍເຖິງຄ່າຕ້ອງຄືກັນ ແລະ ຊະນິດຂໍ້ມູນຕ້ອງຄືກັນ
+        //ຖ້າໃຊ້ == ແມ່ນຂໍພຽງຄ່າຄືກັນ ສ່ວນສະນິດຂໍ້ມູນແມ່ນຈະຖືກປ່ຽນໄປເປັນ string ທັງໝົດ
+        if(myTime === 0){
+
+            //ຖ້າໝົດເວລາກໍໃຫ້ຢຸດ setTimeout() ດ້ວຍຄຳສັ່ງ clearTimeout()
+            clearTimeout(t);
+
+            //ສະແດງຄຳວ່າ ໝົດເວລາ
+            alert("ໝົດເວລາ");
+        
+        }//ວົງປິກກາຂອງ if
+    }//ວົງປີກກາຂອງ startCount()
+
+
+    //ປະກາດຟັງຊັ້ນ stopCout() ໄວ້ເພື່ອຢຸດການນັບຖອຍຫຼັງ ດ້ວຍຕົນເອງ
+    //ເຊິ່ງຈະເຮັດວຽເມື່ອເຮົາກົດປຸ່ມ stop
+    function stopCount(){
+        
+        //ຢຸດ setTimeout ດ້ວຍຄຳສັ່ງ clearTimeout
+        clearTimeout(t);
+
+        //ກຳນົດຄ່າເລີ່ມຕົ້ນໃນ textfield ໃຫ້ເປັນວ່າງເປົ່າ
+        document.getElementById("myTime").value = "";
+    }
+</script>

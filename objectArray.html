@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="show">
+    </ol>
+
+    <table border="1" id="showUser">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </table>
+
+</body>
+</html>
+<script>
+    var student = [
+        {id:"123", name:"Ton"},
+        {id:"456", name:"Maylisa"},
+        {id:"789", name:"Sonethavy"},
+    ];
+    
+    for(var s=0; s < student.length; s++)
+    {
+        //ສ້າງ list
+        var list = document.createElement('li');
+        list.innerHTML =  'ID = ' + student[s].id +', Name = ' + student[s].name;
+        document.getElementById('show').appendChild(list);
+
+
+        //ສ້າງແຖວໃນຕາຕະລາງ
+        var row = document.createElement('tr');
+        //ເພີ່ມເນື້ອໃນທີ່ຢູ່ໃນແຖວ
+        row.innerHTML = 
+                        '<td>'+student[s].id+
+                        '</td><td>'+
+                        student[s].name+
+                        '</td>'
+        //ເພີ່ມແຖວເປັນ child element ຂອງ showUser
+        document.getElementById('showUser').appendChild(row)
+    }
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="product"></div>
+    
+
+
+
+    <div id="item2"></div>
+</body>
+</html>
+<script>
+    
+    var items = ['Apple', 'Orange', 'Lemon'];
+    
+    //ການສະແດງອາເຣ
+    document.getElementById("product").innerHTML = items[2]
+    
+    document.getElementById("product").innerHTML = items.join("  ")  
+
+
+    //ເພີ່ມຂໍ້ມູນໃສ່ໃນ items
+    items.push('Coconut');//ເພີ່ມໃສ່ຫຼັງສຸດ
+    items.unshift('Strawberry')//ເພີ່ມໃສ່ໜ້າສຸດ
+
+    //ຕັດຂໍ້ມູນອອກຈາກ items
+    items.pop(); //ຕັດໂຕຫຼັງສຸດ
+    items.shift(); //ຕັດໂຕໜ້າສຸດ
+
+    //ລຶບຕາມຕໍາແໜ່ງທີ່ລະບຸ
+    items.splice(1,1)//ຕຳແໜ່ງທີ່ຢາກລຶບ, ຈຳນວນທີ່ຕ້ອງການລຶບ, [ສາມາດແທນຄ່າໄດ້]
+
+    document.getElementById("item2").innerHTML = items.join(", ")
+    
+</script>

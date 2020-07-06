@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    
+    <form action="">
+        <div>
+            <label for="">Username</label> 
+            <input type="text" name="" id="username" placeholder="ປ້ອນຊື່ຜູ້ໃຊ້">
+        </div>
+
+        <div>
+            Password
+            <input type="password" name="" id="password" placeholder="ລະຫັດຜ່ານ">
+        </div>
+
+        <div>
+            <button onclick="checkLogin()">Login</button>
+        </div>
+    </form>
+</body>
+</html>
+<script>
+//ວຽກບ້ານ
+//1. ຈາກຊຸດຄຳສັ່ງ JS ໃຫ້ສ້າງໜ້າລ໊ອກອິນເພື່ອກວດສອບການລ໊ອກອິນ
+
+//2. ຈາກອາເຣ users ລຸ່ມນີ້ ໃຫ້ຂຽນຄຳສັ່ງລ໊ອກອິນອ້າງອີງຈາກຂໍ້ມູນຜູ້ໃຊ້ທີ່ກຳນົດໃຫ້
+var users = [
+    {username:'koung', password:'1234'},
+    {username: 'puen', password:'4567'}
+];
+
+function checkUser()
+{
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    for(var i = 0; i < users.length; i++)
+    {
+        if ( username == users[i].username && password == users[i].password )
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function checkLogin(){
+    
+    if( checkUser() === true )
+    {
+        alert( 'ສຳເລັດ' );
+    } else {
+        alert( 'ບໍ່ສຳເລັດ' );
+    }
+    
+}
+</script>

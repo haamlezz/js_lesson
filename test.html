@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="petlist"></ul>
+</body>
+</html>
+
+<script>
+    
+    var pets = ['Dog', 'Cat', 'Fist']
+
+    
+    for(var i = 0; i < pets.length; i++){
+        var list = document.createElement("li")
+        list.innerHTML = pets[i]
+        document.getElementById("petlist").appendChild(list)
+
+    }
+    
+
+</script>

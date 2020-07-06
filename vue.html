@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=”https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src=”https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="c in countries">{{c}}</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            countries:['lao','thi','us','jap']
+        }
+    });
+</script>

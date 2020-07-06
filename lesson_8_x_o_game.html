@@ -28,6 +28,7 @@
 <body>
     <h1>ເກມແຊ້ມກະໂລ້ X - O Game</h1>
     <button onclick="location.reload()">Reset</button>
+    
     <div id="game">
         
     </div>
@@ -43,23 +44,26 @@
     }
 
     var blocks = document.getElementsByClassName("block");
-    var player = "X";
+    
+    var player = "X"; //ຄ່າເລີ່ມຕົ້ນຂອງ player ແມ່ນ x
     var count = 0;
 
-    for (var j = 0; j< blocks.length; j++){
+
+    for (var j = 0; j < blocks.length; j++){
         blocks[j].onclick = function(target) {
-            this.innerHTML = player;
-            if(player === "X") {
-                player = "O";
+            //ຖ້າມັນມີຄ່າຢູ່ແລ້ວໃຫ້ alert
+            if( this.innerHTML === "X" || this.innerHTML === "O" ) {
+                alert ("ບໍ່ວ່າງ ມີແຟນແລ້ວ")
             } else {
-                player = "X";
-            }
-
-            console.log(target)
-            count++;
-
-            if(count === 9){
-                alert('Stop');
+                //ຖ້າມັນວ່າງໃຫ້ເພີ່ມໃສ່
+                this.innerHTML = player;
+                if(player === "X") {
+                //ຖ້າເປັນ X ໃຫ້ປ່ຽນເປັນ O
+                player = "O";
+                } else {
+                    //ຖ້າເປັນ O ໃຫ້ປ່ຽນເປັນ X
+                    player = "X";
+                }
             }
         }
     }

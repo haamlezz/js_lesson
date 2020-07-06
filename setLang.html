@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="lang" onchange="changeLang()">
+        <option value="0">English</option>
+        <option value="1">Lao</option>
+    </select>
+    <h1 id="text"></h1>
+</body>
+</html>
+<script>
+    var text_lang = ['Hello','ສະບາຍດີ']
+    document.getElementById('text').innerHTML = text_lang[0]
+    
+    function changeLang(){
+        var selected_lang = document.getElementById('lang').value
+        
+        document.getElementById('text').innerHTML =
+         text_lang[selected_lang]
+    }
+</script>

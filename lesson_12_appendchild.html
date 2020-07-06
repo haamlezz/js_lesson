@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="student" onchange="getStudent()">
+        
+    </select>
+
+
+    <img src="image/0.JPG" id="student_pic" width="400" alt="">
+
+</body>
+</html>
+<script>
+    //ປະກາດອາເຣ 
+    var std = ['Tik','Jack','Ton','May','Nouny','Panin'];
+
+    //Loop
+    for(var i=0; i < std.length; i++)
+    {
+        /* ສ້າງ Element */
+        var opt = document.createElement('option')
+        //ປະກາດໂຕປ່ຽນ opt ເປັນ option ໂຕໃໝ່
+
+        /* ກຳນົດ Attribute ໃຫ້ opt */
+        opt.setAttribute('value', i)
+        //ກຳນົດຄຸນສົມບດໃຫ້ option ມີຄ່າເປັນ 0,1,2 ຕາມລຳດັບຂອງ array
+
+        /* ກຳນົດຂໍ້ຄວາມໃນ opt */
+        opt.innerHTML = std[i]
+        //ສະແດງຊື່ນັກສຶກສາໃສ່ໃນ option ແຕ່ລະອັນ ລຽງຕາມ array
+
+        /* ເພີ່ມ opt ເຂົ້າໃນ select */
+        document.getElementById('student').appendChild(opt)
+        //ເພີ່ມ option ແຕ່ລະອັນເຂົ້າໃນ select ຕາມລຳດັບຂອງ array
+
+    }
+
+
+
+    //function
+    function getStudent()
+    {
+        var student = document.getElementById('student').value
+        var image = 'image/' + student + '.jpg'
+        document.getElementById('student_pic').setAttribute('src',image)
+    }
+
+</script>

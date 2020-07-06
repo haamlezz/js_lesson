@@ -36,6 +36,7 @@
         ເຊິ່ງຈະໄປເຮັດວຽກຄຳສັ່ງໃນຟັງຊັ້ນ change()
     -->
     <div class="block" id="block" onclick="change()">X</div>
+    
 </body>
 </html>
 <script>
@@ -43,15 +44,19 @@
     // ປະກາດຟັງຊັ້ນ change()
     //ເມື່ອກົດແລ້ວຄ່າ x ຈະປ່ຽນເປັນ o
     //ເມື່ອກົດອີກຄັ້ງຈະປ່ຽນຈາກ o ໄປເປັນ x
-    function change(){
+    function change()
+    {
 
         //ຄ່າທີ່ທີ່ຢູ່ໃນໄອດີ block ແລ້ວເກັບໄວ້ໂຕປ່ຽນ block
         var block = document.getElementById("block").innerHTML;
 
         //ກວດວ່າ block ມີຄ່າເທົ່າ X ຫຼື ບໍ່
-        if(block === "X"){
+        if(block === "X")
+        {
+            
             //ກໍລະນີເທົ່າ x ແມ່ນໃຫ້ປ່ຽນເປັນຄ່າ o ເພື່ອນຳໄປສະແດງ
             block = "O";
+
         } else {
 
             //ກໍລະນີທີ່ມີຄ່າເທົ່າ o ແມ່ນໃຫ້ປ່ຽນເປັນຄ່າ x ເພື່ອນຳໄປສະແດງ
