@@ -11,6 +11,7 @@
     <div class="container">
         <h1>Product List</h1>
         <div class="row" id="show">
+
         </div>
     </div>
 </body>
@@ -45,14 +46,14 @@
         div.innerHTML = `
             <div class="card">
                 <a href="#"><img class="card-img-top img-fluid" src="https://via.placeholder.com/150" alt="Image Product"/></a>
-                <div class="body mt-3 mb-3">
-                    <div class="container">
+                <div class="card-body mt-3 mb-3">
+                    
                         <div class="row">
                             <div class="col-6"><a href="#"><h4 class="text-primary">`+products[i].name+`</h4></a></div>
                             <div class="col-6"><h4 class="text-right">`+products[i].price+`</h4></div>
                         </div>
                         <button class="btn btn-primary">Buy Now</button>
-                    </div>
+                    
                 </div>
                 <div class="card-footer text-warning">
                     `+star+`
